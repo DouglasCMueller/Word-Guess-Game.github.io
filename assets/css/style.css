@@ -1,1 +1,62 @@
-style
+* {
+    box-sizing: border-box;
+  }
+body { 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white; 
+    background-image: url("../images/criss-cross.png");
+  }
+  .jumbotron.jumbotron-fluid {
+      margin: 1% 0 0 0;
+      background: #ffffff;
+  }
+  h1 {
+      padding: 1%;
+      margin: 0;
+  }
+.display-4 {
+    text-align: center;
+    color: blue;
+}
+.col-sm{
+    padding:0;
+    margin-top: 1%;
+}
+
+.Game-Content.Side-Image {
+    position: relative;
+    float: left;
+    width: 50%;
+    
+}  
+.Game-Content.Game-Play {
+    position: relative;
+    float: left;
+    width: 50%;    
+  }
+ 
+ 
+.Game-Content {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    border: solid 2px black;
+    height: 100vh;
+    color: blue;
+    font-size: 20px;
+}
+
+h3 {
+    display: block;
+    padding: 1%;
+    text-align: center;
+    margin: 0;
+}
+p {
+    margin:0;
+}
+
+
+
