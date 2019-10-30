@@ -1,3 +1,8 @@
+
+$(document).ready(function()  {
+    $("#presidentName").hide;
+});
+
 //Variables defined
 var presidentLastName = [
     "Trump",
@@ -11,6 +16,11 @@ var presidentLastName = [
     "Kennedy",
     "Eisenhower"
 ];
+var chosenWord =[];
+var chosenWordLetters =[];
+var numberBlanks = [];
+var answerArray = [];
+var answerDisplay = [];
 var userGuess = [];
 var guessesRemaining = 10;
 var wrongLetter = [];
@@ -18,22 +28,30 @@ var underScores = [];
 var userWins = 0;
 
 
-//chose random word from array
+    //chose random word from array
 
 var chosenWord = presidentLastName[Math.floor(Math.random() * presidentLastName.length)];
-console.log (chosenWord);
-
-//create blank array with "_"
-
-var answerArray = [];
-for (var i = 0; i < chosenWord.length; i++) {
- underScores.push("_");
+console.log ("The current chosen word is: " + chosenWord);
+//grab chosen word and break it into individual letters
+chosenWordLetters = chosenWord.split("");
+console.log ("The chosen word letters are: " + chosenWordLetters);
+//grab chosen word and get number of letters in it
+numberBlanks = chosenWordLetters.length;
+console.log ("The number of letters in chosen word is: " + numberBlanks);
+//add correct number of blanks to answerDisplay that corresponds with the length of the chosenWord
+for (i = 0; i< numberBlanks; i++) {
+    answerArray.push("_");
 }
+console.log(answerArray)
+//create final answerDisplay of blanks
+answerDisplay=answerArray.join(" ");
+console.log(answerDisplay);
 
-//start game
-//show the underscored answer in html document under text current word
 
-console.log(underScores)
+
+
+
+
 //capture user typed letter
 document.onkeyup = function(event)
 {
@@ -43,10 +61,10 @@ document.onkeyup = function(event)
 
 if (wrongLetter.indexOf(userGuess) === userGuess){
     alert("You already guessed" + userGuess);
-}
-console.log(guessesLeft)
+
+
 //compare guessed letter to chosenWord letters
-if (chosenWord.indexOf(userGuess) > -1)
+if (chosenWordLetters.indexOf(userGuess) > -1)
 {
     for(var j=0; j<chosenWord.length; j++)
     {
@@ -78,4 +96,5 @@ userWins++;
 console.log(wrongLetter);
 console.log(userGuesses);
 console.log(underScores);
+}
 }

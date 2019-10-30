@@ -50,11 +50,12 @@ body {
     font-size: 20px;
 }
 
-h3 {
+#presidentName {
     display: block;
     padding: 1%;
     text-align: center;
     margin: 0;
+    font-size: 25px;
 }
 p {
     margin:0;

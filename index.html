@@ -6,15 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+     crossorigin="anonymous"></script>
      <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+     <script type="text/javascript" src="assets/javascript/game.js"></script>
   
     <title>Word Guess Game</title>
 </head>
 
 <body>
+    <embed src="assets/images/hail_to_the_chief.mp3" hidden="true" loop="false" preload="auto" autostart="true">
+  <!-- <audio autoplay>
+    <source src="assets/images/hail_to_the_chief.mp3" type="audio/mpeg">
+    </audio> -->
+  
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
     <h1 class="display-4">Modern Presidents Word Guess</h1>
@@ -23,7 +28,7 @@
   <div class="container">
     <div class="row">
     <div class="col-sm">
-      <h3 id="presidentName">President Name</h3>
+      <div id="presidentName">President Name</div>
     </div>
     </div>
   </div>
@@ -35,14 +40,14 @@
       </div>
     <div class="col-sm">
         <div id="gamePlay"></div>
-          <h3>Press any key to get started!</h3>
-          <h3>Wins</h3>
-          <h3>Current Word</h3>
-          <h3 id="underscoredWord"></h3>
-          <h3>Number of Guesses Remaining</h3>
-          <h3 id="guessesRemaining"></h3>
-          <h3>Letters already Guessed</h3>
-          <h3 id="guessedLetters"></h3>
+          <div>Press any key to get started!</div>
+          <div>Wins</div>
+          <div>Current Word</div>
+          <div id="underscoredWord"></div>
+          <div>Number of Guesses Remaining</div>
+          <div id="guessesRemaining"></div>
+          <div>Letters already Guessed</div>
+          <div id="guessedLetters"></div>
       </div>
       </div>
       </div>
