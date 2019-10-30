@@ -23,28 +23,30 @@ body {
     padding:0;
     margin-top: 1%;
 }
-
-.Game-Content.Side-Image {
+.p {
+    font-size: 30px;
+}
+.gameContent.Side-Image {
     position: relative;
     float: left;
     width: 50%;
     
 }  
-.Game-Content.Game-Play {
+.gameContent.gamePlay {
     position: relative;
     float: left;
     width: 50%;    
   }
  
  
-.Game-Content {
+.gameContent {
     position: relative;
     margin: auto;
     width: 80%;
     text-align: center;
     border: solid 2px black;
     height: 100vh;
-    color: blue;
+    color: red;
     font-size: 20px;
 }
 
