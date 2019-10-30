@@ -1,7 +1,5 @@
 
-$(document).ready(function()  {
-    $("#presidentName").hide;
-});
+$(document).ready(function() {
 
 //Variables defined
 var presidentLastName = [
@@ -16,18 +14,35 @@ var presidentLastName = [
     "Kennedy",
     "Eisenhower"
 ];
-var chosenWord =[];
+//empty variable to store current word to be guessed as a string
+var chosenWord ="";
+//empty variable to hold the actual letters in the chosenWord
 var chosenWordLetters =[];
+//variable that holds the number of blanks "_" in the currentWord
 var numberBlanks = [];
+//variable that holds the answer in blanks form
 var answerArray = [];
+
+//variable that is actual word in blanks formatted, this will change as letters are guessed correctly
 var answerDisplay = [];
+//answerDisplay represented as a string
+var answerString = "";
+//variable that stores userGuess
 var userGuess = [];
-var guessesRemaining = 10;
+//empty array that holds all the wrong guesses
 var wrongLetter = [];
-var underScores = [];
-var userWins = 0;
+//counter for correct letters in the chosenWord
+var correctLetter = 0;
 
+//Game stats
+var wins = 0;
+var losses = 0;
+var guessesRemaining = 10;
 
+//functions
+//function that starts a new game
+
+function startGame(){
     //chose random word from array
 
 var chosenWord = presidentLastName[Math.floor(Math.random() * presidentLastName.length)];
@@ -42,59 +57,61 @@ console.log ("The number of letters in chosen word is: " + numberBlanks);
 for (i = 0; i< numberBlanks; i++) {
     answerArray.push("_");
 }
+startGame();
 console.log(answerArray)
+function winOrLoseTheGame {
+    if (correctLetter = chosenWord.length) {
+        alert ("You win!");
+        //display president full name
+//display president photo where current hangman image is located
+//play president sound-bite
+
+    }
+    else if(guessesRemaining < 1){
+        alert("You lose!")
+    }
+}
+
 //create final answerDisplay of blanks
 answerDisplay=answerArray.join(" ");
 console.log(answerDisplay);
-
-
-
-
-
+function buttonClickToStart() {
+     
+//create loop for game play ending if guessesRemaining is zero
+for (l = 0; l>guessesRemaining; l--) {
 
 //capture user typed letter
 document.onkeyup = function(event)
 {
     userGuess=event.key;
+    guessesRemaining -1;
+    console.log(guessesRemaining)
     console.log(userGuess)
+
     //check if letter already guessed incorrectly
 
 if (wrongLetter.indexOf(userGuess) === userGuess){
     alert("You already guessed" + userGuess);
-
+    guessesRemaining+1;
 
 //compare guessed letter to chosenWord letters
-if (chosenWordLetters.indexOf(userGuess) > -1)
-{
+
     for(var j=0; j<chosenWord.length; j++)
     {
-        if(chosenWord[j]=== userGuess)
+        if(chosenWordLetters[j]=== userGuess)
             {
-        //push user letter guessed to underscores index
-        underScores[j] = userGuess;
-        console.log(underScores);
+        //push user letter guessed to answerDisplay 
+        answerDisplay[j] = userGuess;
+        console.log(answerDisplay);
+        correctLetter++;
+        winTheGame();
     }
-
-        else{
+    else if{
     //push incorrect letter to wrongLetter array
      wrongLetter.push(userGuess);
-    //reduce user guesses by 1
-    guessesRemaining--;
+    console.log (wrongLetter);
   }
-}
-} 
-//game over 
-if (underScores.join === chosenWord){
-    //add 1 to user wins total
-userWins++;
-//display president full name
-//display president photo where current hangman image is located
-//play president sound-bite
-
-}
-
-console.log(wrongLetter);
-console.log(userGuesses);
-console.log(underScores);
+    }
 }
 }
+ });

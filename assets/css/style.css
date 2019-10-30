@@ -4,9 +4,8 @@
 body { 
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: white; 
-    background-image: url("../images/criss-cross.png");
-  }
+    /* background: lightblue;  */
+}
   .jumbotron.jumbotron-fluid {
       margin: 1% 0 0 0;
       background: #ffffff;

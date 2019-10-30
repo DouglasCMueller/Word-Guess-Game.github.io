@@ -9,13 +9,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
      crossorigin="anonymous"></script>
      <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-     <script type="text/javascript" src="assets/javascript/game.js"></script>
+     <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
+    
   
     <title>Word Guess Game</title>
 </head>
 
 <body>
-    <embed src="assets/images/hail_to_the_chief.mp3" hidden="true" loop="false" preload="auto" autostart="true">
+    <!-- <embed src="assets/images/hail_to_the_chief.mp3" loop="false" preload="auto" autostart="true"> -->
   <!-- <audio autoplay>
     <source src="assets/images/hail_to_the_chief.mp3" type="audio/mpeg">
     </audio> -->
@@ -25,6 +26,7 @@
     <h1 class="display-4">Modern Presidents Word Guess</h1>
     </div>
   </div>
+
   <div class="container">
     <div class="row">
     <div class="col-sm">
@@ -36,12 +38,14 @@
       <div class="container">
       <div class="row">
       <div class="col-sm">
-        <img src="assets/images/hangman.png" height="300px" width="300px" alt="Hang Man">
+        <img id="mainImage" src="assets/images/hangman.png" height="300px" width="300px" alt="Hang Man">
       </div>
     <div class="col-sm">
         <div id="gamePlay"></div>
+        <button onclick="startGame()">Click here to start game!</button>
           <div>Press any key to get started!</div>
-          <div>Wins</div>
+          <div> Wins</div>
+          <div id="wins">21</div>
           <div>Current Word</div>
           <div id="underscoredWord"></div>
           <div>Number of Guesses Remaining</div>
@@ -52,5 +56,6 @@
       </div>
       </div>
     </div>
+
 </body>
 </html>
