@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <!-- <embed src="assets/images/hail_to_the_chief.mp3" loop="false" preload="auto" autostart="true"> -->
-  <!-- <audio autoplay>
-    <source src="assets/images/hail_to_the_chief.mp3" type="audio/mpeg">
-    </audio> -->
-  
+    <audio controls autoplay loop>
+        <source src="assets/images/hail_to_the_chief.mp3" type="audio/mp3">
+        <embed src="assets/images/hail_to_the_chief.mp3" autostart="true" loop="true" hidden="true"> 
+      </audio>
+ 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
     <h1 class="display-4">Modern Presidents Word Guess</h1>
@@ -30,7 +30,9 @@
   <div class="container">
     <div class="row">
     <div class="col-sm">
-      <div id="presidentName">President Name</div>
+      <div id="winningMessage"></div>
+      <div id="presidentName"></div>
+      
     </div>
     </div>
   </div>
@@ -38,20 +40,21 @@
       <div class="container">
       <div class="row">
       <div class="col-sm">
-        <img id="mainImage" src="assets/images/hangman.png" height="300px" width="300px" alt="Hang Man">
+        <img id="mainImage" src="assets/images/presidentialSeal.jpg" height="300px" width="300px" alt="Hang Man">
       </div>
     <div class="col-sm">
         <div id="gamePlay"></div>
-        <!-- <button onclick="startGame()">Click here to start game!</button> -->
-          <div>Press any letter to start guessing!</div>
-          <div> Wins</div>
-          <div id="wins">21</div>
-          <div>Current Word</div>
+          <div>Try to guess the last name of a modern presidents name.</div>
+          <div>*** only use lower case letters ***</div>
+          <div>Guess a letter to start!</div>
           <div id="underscoredWord"></div>
+          <br>
           <div>Number of Guesses Remaining</div>
           <div id="guessesRemaining"></div>
+          
           <div>Letters guessed incorrectly</div>
           <div id="guessedLetters"></div>
+      
       </div>
       </div>
       </div>

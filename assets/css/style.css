@@ -9,6 +9,7 @@ body {
   .jumbotron.jumbotron-fluid {
       margin: 1% 0 0 0;
       background: #ffffff;
+      border: solid 1% blue;
   }
   h1 {
       padding: 1%;
@@ -43,14 +44,22 @@ body {
     margin: auto;
     width: 80%;
     text-align: center;
-    border: solid 2px black;
-    height: 100vh;
+    border: solid 2px blue;
+    height: auto;
     color: red;
     font-size: 20px;
 }
-
+#winningMessage {
+    display: block;
+    color: blue;
+    padding: 1%;
+    text-align: center;
+    margin: 0;
+    font-size: 25px;
+}
 #presidentName {
     display: block;
+    color: blue;
     padding: 1%;
     text-align: center;
     margin: 0;
