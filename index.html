@@ -12,20 +12,23 @@
      <script type="text/javascript" src="assets/javascript/game.js"></script> 
     
   
-    <title>Word Guess Game</title>
+    <title>Modern Presidents Word Guess Game</title>
 </head>
 
-<body>
-    <audio controls autoplay loop>
-        <source src="assets/images/hail_to_the_chief.mp3" type="audio/mp3">
-        <embed src="assets/images/hail_to_the_chief.mp3" autostart="true" loop="true" hidden="true"> 
-      </audio>
+<body background="assets/images/americanFlagTransparent.jpg">
  
-  <div class="jumbotron jumbotron-fluid">
+    <audio controls autoplay loop>
+        <source class= "audioPlay" src="assets/images/hail_to_the_chief.mp3" type="audio/mp3">
+        <embed  class= "audioPlay" src="assets/images/hail_to_the_chief.mp3" autostart="true" loop="true" hidden="true"> 
+      </audio>
+      <div class="pb-2 mt-4 mb-2 border-bottom">
+          Modern Presidents Word Guess Game
+    </div>
+  <!-- <div class="jumbotron jumbotron-fluid">
     <div class="container">
     <h1 class="display-4">Modern Presidents Word Guess</h1>
     </div>
-  </div>
+  </div> -->
 
   <div class="container">
     <div class="row">
@@ -40,16 +43,17 @@
       <div class="container">
       <div class="row">
       <div class="col-sm">
-        <img id="mainImage" src="assets/images/presidentialSeal.jpg" height="300px" width="300px" alt="Hang Man">
+        <img id="mainImage" src="assets/images/presidentialSeal.jpg" height="300px" width="300px" alt="President Image">
       </div>
+      
     <div class="col-sm">
         <div id="gamePlay"></div>
-          <div>Try to guess the last name of a modern presidents name.</div>
+          <div>Try to guess the a modern president's last name.</div>
           <div>*** only use lower case letters ***</div>
           <div>Guess a letter to start!</div>
           <div id="underscoredWord"></div>
           <br>
-          <div>Number of Guesses Remaining</div>
+          <div>Incorrect Guesses Remaining</div>
           <div id="guessesRemaining"></div>
           
           <div>Letters guessed incorrectly</div>
