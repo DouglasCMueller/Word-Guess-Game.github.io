@@ -4,17 +4,13 @@
 body { 
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    /* background: lightblue;  */
+  
 }
-  /* .jumbotron.jumbotron-fluid {
-   
-      background: #ffffff;
-     
-  } */
-  .pb-2.mt-4.mb-2.border-bottom{
+   .pb-2.mt-4.mb-2.border-bottom{
       color: blue;
       font-size: 50px;
       text-align: center;
+      padding: 0;
 
   }
   h1 {
@@ -54,7 +50,7 @@ body {
     border: solid 2px blue;
 height: 80vh;
     color: red;
-    font-size: 20px;
+    font-size: 35px;
 }
 #winningMessage {
     display: block;
