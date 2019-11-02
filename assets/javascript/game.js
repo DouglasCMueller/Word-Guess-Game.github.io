@@ -28,6 +28,9 @@ $(document).ready(function() {
     var wins = 0;
     var losses = 0;
     var guessesRemaining = 10;
+
+    var resetButton = $('.reset');
+    
        
     //function for game start
     function startGame() {
@@ -48,61 +51,66 @@ $(document).ready(function() {
     //function for win or lose
     function winOrLose(){
         if  (JSON.stringify(chosenwordArray)==JSON.stringify(numberBlanks)){
-            console.log(chosenwordArray)==JSON.stringify(numberBlanks);
-        // if (correctGuessCounter === chosenWord.length){
+            console.log(chosenwordArray)==JSON.stringify(numberBlanks); 
+            // wins++;
+            // ("#wins").text(wins);
+                
             if (chosenWord === "trump"){
                 $("#winningMessage").text("Congratulations from the 45th President of the United States");
                 $("#presidentName").text("Donald Trump");
-                $("#mainImage").attr("src", "assets/images/trump.jpg");
+                $("#mainImage").attr("src", "assets/images/Trump.jpg");
                 $(".audioPlay").attr("src","assets/images/trumpInauguralAddress.mp3");
             }
             else if (chosenWord === "obama"){
                 $("#winningMessage").text("Congratulations from the 44th President of the United States");
                 $("#presidentName").text("Barack Obama");
-                $("#mainImage").attr("src", "assets/images/obama.jpg");
+                $("#mainImage").attr("src", "assets/images/Obama.jpg");
             }
             else if (chosenWord === "clinton"){
                 $("#winningMessage").text("Congratulations from the 42nd President of the United States");
                 $("#presidentName").text("Bill Clinton");
-                $("#mainImage").attr("src", "assets/images/clinton.jpg");
+                $("#mainImage").attr("src", "assets/images/Clinton.jpg");
             }
             else if (chosenWord === "reagan"){
                 $("#winningMessage").text("Congratulations from the 40th President of the United States");
                 $("#presidentName").text("Ronald Reagan");
-                $("#mainImage").attr("src", "assets/images/reagan.jpg");
+                $("#mainImage").attr("src", "assets/images/Reagan.jpg");
             }
             else if (chosenWord === "carter"){
                 $("#winningMessage").text("Congratulations from the 39th President of the United States");
                 $("#presidentName").text("Jimmy Carter");
-                $("#mainImage").attr("src", "assets/images/carter.jpg");
+                $("#mainImage").attr("src", "assets/images/Carter.jpg");
             }
             else if (chosenWord === "ford"){
                 $("#winningMessage").text("Congratulations from the 38th President of the United States");
                 $("#presidentName").text("Gerald Ford");
-                $("#mainImage").attr("src", "assets/images/ford.jpg");
+                $("#mainImage").attr("src", "assets/images/Ford.jpg");
             }
             else if (chosenWord === "nixon"){
                 $("#winningMessage").text("Congratulations from the 37th President of the United States");
                 $("#presidentName").text("Richard Nixon");
-                $("#mainImage").attr("src", "assets/images/nixon.jpg");
+                $("#mainImage").attr("src", "assets/images/Nixon.jpg");
             }
             else if (chosenWord === "kennedy"){
                 $("#winningMessage").text("Congratulations from the 35th President of the United States");
                 $("#presidentName").text("John F. Kennedy");
-                $("#mainImage").attr("src", "assets/images/kennedy.jpg");
+                $("#mainImage").attr("src", "assets/images/Kennedy.jpg");
             }
             else if (chosenWord === "eisenhower"){
                 $("#winningMessage").text("Congratulations from the 34th President of the United States");
                 $("#presidentName").text("Dwight D. Eisenhower");
-                $("#mainImage").attr("src", "assets/images/eisenhower.jpg");
+                $("#mainImage").attr("src", "assets/images/Eisenhower.jpg");
             }
             else if (chosenWord === "johnson"){
                 $("#winningMessage").text("Congratulations from the 36th President of the United States");
                 $("#presidentName").text("Lyndon B. Johnson");
-                $("#mainImage").attr("src", "assets/images/johnson.jpg");
+                $("#mainImage").attr("src", "assets/images/Johnson.jpg");
             }
+            return;
         }
         else if (guessesRemaining <1){
+            // losses++;
+            //  ("#losses").text(losses);
             $("#winningMessage").text("You don't know your modern presidents! -- Reload the page to try again");
             
         }
@@ -116,13 +124,13 @@ $(document).ready(function() {
         
        //if user enters letter already guessed wrong
         $("#guessesRemaining").text(guessesRemaining);
-        guessesRemaining--;
+        
         console.log(guessesRemaining);
-        $("#guessesRemaining").text(guessesRemaining);
+        
         console.log(guessesRemaining)
    if (wrongLetter.indexOf(userGuess) > -1){
             alert("You have already chosen that incorrect letter " + userGuess + " !");
-            guessesRemaining++;
+            
             $("#guessesRemaining").text(guessesRemaining);
         }
     
@@ -133,7 +141,7 @@ $(document).ready(function() {
               if(chosenWord[i] === userGuess){
                 numberBlanks[i] =userGuess;
                 $("#underscoredWord").text(numberBlanks);
-                guessesRemaining++;
+                
                 $("#guessesRemaining").text(guessesRemaining);
                 console.log(guessesRemaining)
                 winOrLose();
@@ -144,11 +152,30 @@ $(document).ready(function() {
          
             wrongLetter.push(userGuess);
             $("#guessedLetters").text(wrongLetter);
-      
+            guessesRemaining--;
+            $("#guessesRemaining").text(guessesRemaining);
             winOrLose();
         
         }
     }
+    function reset() {
+        //empty variable to store current word to be guessed as a string
+            chosenWord ="";
+             //variable that holds the number of blanks "_" in the currentWord
+            numberBlanks = [];
+            numberBlanksNoCommas  = [];
+           //variable that holds chosen word as an array
+            chosenwordArray = [];
+            //variable that stores userGuess
+            userGuess = [];
+            //empty array that holds all the wrong guesses
+            wrongLetter = [];
+            guessesRemaining = 10;
+            }
+       
+            resetButton.on('click', reset);
+           
+       
     
   }
 startGame ();
