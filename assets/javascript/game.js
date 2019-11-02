@@ -53,7 +53,7 @@ $(document).ready(function() {
             if (chosenWord === "trump"){
                 $("#winningMessage").text("Congratulations from the 45th President of the United States");
                 $("#presidentName").text("Donald Trump");
-                $("#mainImage").attr("src", "../assets/images/trump.jpg");
+                $("#mainImage").attr("src", "/assets/images/trump.jpg");
                 $(".audioPlay").attr("src","assets/images/trumpInauguralAddress.mp3");
             }
             else if (chosenWord === "obama"){
