@@ -36,15 +36,12 @@ body {
     position: relative;
     float: left;
     width: 50%;
-    
 }  
 .gameContent.gamePlay {
     position: relative;
     float: left;
     width: 50%;    
   }
- 
- 
 .gameContent {
     position: relative;
     margin: auto;
@@ -52,7 +49,7 @@ body {
     text-align: center;
     background: white;
     border: solid 2px blue;
-height: 100vh;
+    height: 100vh;
     color: red;
     font-size: 35px;
 }

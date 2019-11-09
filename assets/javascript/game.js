@@ -174,9 +174,7 @@ $(document).ready(function() {
             }
        
             resetButton.on('click', reset);
-           
-       
-    
+     
   }
 startGame ();
 });
